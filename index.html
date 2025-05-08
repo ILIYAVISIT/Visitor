@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>شما هک شدید</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: Tahoma, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  شما هک شدید
+
+  <!-- صدا ۱: صدای خودت (چرا کانال منو دنبال نمیکنی؟) -->
+  <audio id="why" autoplay>
+    <source src="why.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- صدا ۲: صدای نویز آزاردهنده (پخش مداوم) -->
+  <audio id="annoying" autoplay loop>
+    <source src="annoying.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // صدا ۲ (نویز) بعد از 10 ثانیه شروع می‌شود و تا زمانی که صفحه بسته شود پخش می‌شود
+    setTimeout(() => {
+      document.getElementById("annoying").play();
+    }, 10000);
+  </script>
+</body>
+</html>
