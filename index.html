@@ -19,20 +19,28 @@
     }
   </style>
 </head>
-<body onclick="startSounds()">
+<body onclick="playSounds()">
   شما هک شدید
 
+  <!-- صدای اول: چرا کانال منو دنبال نمی‌کنی؟ -->
   <audio id="why">
     <source src="why.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- صدای دوم: نویز آزاردهنده -->
   <audio id="annoying" loop>
     <source src="annoying.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    function startSounds() {
+    function playSounds() {
+      // فقط یک بار اجرا بشه
+      document.body.onclick = null;
+
+      // پخش صدای اول
       document.getElementById("why").play();
+
+      // بعد از ۱۰ ثانیه، صدای نویز
       setTimeout(() => {
         document.getElementById("annoying").play();
       }, 10000);
