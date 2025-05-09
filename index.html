@@ -15,27 +15,28 @@
       margin: 0;
       font-size: 40px;
       text-align: center;
+      cursor: pointer;
     }
   </style>
 </head>
-<body>
+<body onclick="startSounds()">
   شما هک شدید
 
-  <!-- صدا ۱: صدای خودت (چرا کانال منو دنبال نمیکنی؟) -->
-  <audio id="why" autoplay>
+  <audio id="why">
     <source src="why.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- صدا ۲: صدای نویز آزاردهنده (پخش مداوم) -->
-  <audio id="annoying" autoplay loop>
+  <audio id="annoying" loop>
     <source src="annoying.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    // صدا ۲ (نویز) بعد از 10 ثانیه شروع می‌شود و تا زمانی که صفحه بسته شود پخش می‌شود
-    setTimeout(() => {
-      document.getElementById("annoying").play();
-    }, 10000);
+    function startSounds() {
+      document.getElementById("why").play();
+      setTimeout(() => {
+        document.getElementById("annoying").play();
+      }, 10000);
+    }
   </script>
 </body>
 </html>
